@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flowers For You 💜</title>
+<style>
+:root{--night:#09091e;--violet:#bd72ff;--pink:#ffb8dc;--paper:#fff0f7}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;color:#fff;background:radial-gradient(ellipse at 50% 85%,#283b79 0%,#171b43 40%,#080817 78%);font-family:Georgia,'Times New Roman',serif;overflow-x:hidden}
+#stars{position:fixed;inset:0;pointer-events:none;z-index:0}.star{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;box-shadow:0 0 5px #fff;animation:twinkle 2s infinite alternate}
+@keyframes twinkle{to{opacity:.15;transform:scale(.6)}}
+.moon{position:fixed;right:8%;top:9%;width:55px;height:55px;border-radius:50%;background:#fff8e9;box-shadow:0 0 18px #fff,0 0 48px #b6b9ff;z-index:0}
+main{position:relative;z-index:1;width:min(100%,650px);margin:auto;padding:34px 18px 50px;text-align:center}
+h1{font-size:clamp(2.6rem,9vw,4.5rem);font-style:italic;color:#d99aff;text-shadow:0 0 12px #bb56ff,0 0 30px #9b3fff;margin:22px 0 4px}
+.kicker{letter-spacing:3px;text-transform:uppercase;font:11px Arial,sans-serif;color:#e5d6ff}
+.opening{position:fixed;inset:0;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:15px;background:rgba(4,4,15,.96);transition:opacity .9s,visibility .9s}
+.opening.hide{opacity:0;visibility:hidden;pointer-events:none}
+.opening .label{font:bold 14px Arial,sans-serif;letter-spacing:4px;text-shadow:0 0 12px #e85bff}
+.bigheart{font:112px Arial,sans-serif;color:#d34bff;text-shadow:0 0 16px #b64cff;animation:pulse 1.2s infinite;cursor:pointer}
+@keyframes pulse{50%{transform:scale(1.12)}}
+button{cursor:pointer;border:1px solid #efb7ff;border-radius:999px;background:linear-gradient(135deg,#6f2a9e,#32174e);color:#fff;padding:12px 20px;box-shadow:0 0 18px #a644d7;font-size:14px;transition:transform .2s,filter .2s}
+button:hover{transform:translateY(-2px);filter:brightness(1.2)}
+.bouquet{height:390px;width:min(100%,440px);position:relative;margin:18px auto 8px;isolation:isolate;filter:drop-shadow(0 10px 18px rgba(155,75,255,.12))}
+/* A tapered florist-paper wrap: deliberately cone-shaped, not a box */
+.bouquet .wrap{position:absolute;left:50%;bottom:23px;transform:translateX(-50%);width:292px;height:180px;clip-path:polygon(0 0,100% 0,65% 100%,35% 100%);background:linear-gradient(115deg,#7540ad 0%,#c18bfa 28%,#f1d7ff 48%,#a66bdf 70%,#60308f 100%);opacity:.96;z-index:2;filter:drop-shadow(0 5px 9px #050515)}
+.bouquet .wrap:after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent 43%,rgba(255,255,255,.36) 44%,transparent 46%,transparent 68%,rgba(255,255,255,.18) 69%,transparent 71%)}
+.stem{position:absolute;bottom:49px;width:3px;background:linear-gradient(90deg,#7141a8,#c18bfa);border-radius:9px;transform-origin:bottom;z-index:1;opacity:.42;animation:sway 3s ease-in-out infinite alternate}
+@keyframes sway{to{transform:rotate(3deg)}}
+.bouquet:after{content:"";position:absolute;left:50%;bottom:39px;transform:translateX(-50%) rotate(-4deg);width:55px;height:17px;border-radius:50%;background:linear-gradient(90deg,#8f35c5,#f5caff,#a84bdf);box-shadow:0 0 12px #d56bff;z-index:5}
+.bouquet:before{content:"";position:absolute;left:50%;bottom:26px;transform:translateX(-50%);width:42px;height:20px;background:linear-gradient(135deg,#e5aaff,#9d42d4);clip-path:polygon(0 0,48% 25%,50% 0,100% 0,76% 56%,100% 100%,53% 74%,0 100%,22% 55%);z-index:5;filter:drop-shadow(0 0 4px #c46aff)}
+.flower{position:absolute;width:64px;height:68px;transform:translateX(-50%) scale(.05);opacity:0;animation:bloom 1.25s cubic-bezier(.2,.8,.2,1) forwards;z-index:4;filter:drop-shadow(0 3px 7px #8d3dc6)}
+@keyframes bloom{to{transform:translateX(-50%) scale(1);opacity:1}}
+.petal{position:absolute;width:27px;height:34px;border-radius:60% 60% 48% 48%;background:radial-gradient(ellipse at 30% 18%,#fff0ff 0%,#e4aaff 23%,#bd70f5 52%,#8730c4 82%,#61208f 100%);box-shadow:inset 0 -5px 8px rgba(75,15,115,.5),inset 2px 2px 5px rgba(255,255,255,.45),0 0 10px rgba(177,90,255,.8)}
+.petal:nth-child(1){left:15px;top:0}.petal:nth-child(2){left:3px;top:10px;transform:rotate(-38deg)}.petal:nth-child(3){left:27px;top:10px;transform:rotate(38deg)}.petal:nth-child(4){left:8px;top:24px;transform:rotate(-17deg)}.petal:nth-child(5){left:22px;top:24px;transform:rotate(17deg)}.petal:nth-child(6){left:18px;top:17px;transform:rotate(-12deg) scale(.78);z-index:2}.petal:nth-child(7){left:22px;top:17px;transform:rotate(12deg) scale(.78);z-index:2}.rose-center{position:absolute;left:25px;top:22px;width:13px;height:13px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff0ff,#d995ff 55%,#8b35bd);box-shadow:0 0 7px #f3c7ff;z-index:3}
+.note{color:#ded1ff;font:13px Arial,sans-serif;margin:10px 0 18px}
+.envelope-area{margin:16px auto 10px;min-height:235px;display:grid;place-items:center;perspective:900px}
+.envelope{width:min(88vw,340px);height:190px;position:relative;cursor:pointer;filter:drop-shadow(0 10px 22px #050515);transition:transform .3s}
+.env-back{position:absolute;inset:0;border-radius:7px;background:linear-gradient(135deg,#dba7ff,#9250c8)}
+.env-front{position:absolute;inset:0;background:linear-gradient(145deg,#ffcce8,#ed8dc7);clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%);z-index:4;border-radius:5px}
+.env-flap{position:absolute;inset:0;background:linear-gradient(135deg,#f8d8ff,#b26de6);clip-path:polygon(0 0,100% 0,50% 60%);transform-origin:top;transition:transform .9s;z-index:5;filter:drop-shadow(0 2px 3px #8a45ad)}
+.seal{position:absolute;z-index:6;left:50%;top:48%;transform:translate(-50%,-50%);font:36px Arial;color:#a72dc3;text-shadow:0 0 10px #fff}
+.letter{position:absolute;left:5%;top:8%;width:90%;height:84%;padding:15px 12px;background:var(--paper);color:#683d69;border:1px solid #f7a9d8;box-shadow:0 0 18px #eaa5ff;z-index:2;transition:transform 1s cubic-bezier(.2,.8,.2,1),top 1s;overflow:auto}
+.letter h2{font-size:20px;color:#a23f9b;margin:2px 0 10px}
+.letter p{font:14px/1.55 Arial,sans-serif;margin:7px 0}
+.envelope.open .env-flap{transform:rotateX(180deg);z-index:1}
+.envelope.open .seal{opacity:0}
+.envelope.open .letter{top:-85%;transform:translateY(-3px);z-index:7;height:auto;min-height:220px}
+.envelope.open{margin-top:65px}
+.section-title{font-size:1.6rem;font-style:italic;color:#dca1ff;text-shadow:0 0 12px #a23ee9;margin:26px 0 8px}
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px auto;max-width:440px}
+.photo{min-height:140px;border:7px solid #fff7fb;background:linear-gradient(145deg,#3d326d,#e4a8e0);color:#693e7e;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 6px 16px #030312;transform:rotate(-2deg);font:12px Arial,sans-serif}
+.photo:nth-child(even){transform:rotate(2deg)}.photo span{font-size:34px;margin-bottom:8px}
+.single-gallery{grid-template-columns:minmax(0,1fr);max-width:370px}
+.real-photo{padding:8px 8px 14px;display:block;background:#fff7fb;min-height:0;transform:rotate(-1.5deg)}
+.real-photo img{display:block;width:100%;height:auto;max-height:500px;object-fit:cover}
+.real-photo figcaption{padding:12px 3px 0;font:italic 14px Georgia,serif;color:#79477e}
+
+.music{margin:22px auto;padding:14px 18px;width:min(100%,370px);border:1px solid #b77bff;border-radius:20px;background:rgba(20,13,54,.75);display:flex;align-items:center;gap:12px;text-align:left}
+.music .disc{font-size:26px;background:#54247f;border-radius:50%;padding:9px}.music p{margin:0;font:13px/1.5 Arial,sans-serif}.music small{color:#c9b0f2}
+footer{font:12px Arial,sans-serif;letter-spacing:2px;color:#c9b9e9;margin:28px 0 0}
+@media(max-width:420px){main{padding-inline:12px}.bouquet{height:330px}.envelope{height:175px}.letter p{font-size:12px}.moon{width:39px;height:39px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style></head>
+<body>
+<div id="stars"></div><div class="moon"></div>
+<div class="opening" id="opening"><div class="label">TAP TO OPEN</div><div class="bigheart">♥</div><button id="start">Open your surprise 💜</button></div>
+<main>
+<h1>Flowers For You</h1><p class="kicker">A little bouquet made with love</p>
+<div class="bouquet" id="bouquet" aria-label="A rounded purple flower bouquet in lavender wrapping with a ribbon and no leaves"></div>
+<p class="note">A bouquet made just for you ✨</p>
+<h2 class="section-title">A little letter for you 💌</h2>
+<p class="note">Tap the envelope to open your birthday surprise.</p>
+<div class="envelope-area"><div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Open birthday letter">
+<div class="env-back"></div>
+<div class="letter"><h2>Happy 22nd Birthday, baby! ❤️</h2><p>I hope magustuhan mo itong simpleng surprise ko for you.</p><p>I’m so grateful na nakilala kitaaa.</p><p>Enjoy your day, baby! I love you! 🥹💗</p></div>
+<div class="env-flap"></div><div class="env-front"></div><div class="seal">♥</div>
+</div></div>
+<h2 class="section-title">Iloveyou!</h2>
+
+<div class="gallery single-gallery"><figure class="photo real-photo"><img src="birthday-photo.png" alt="A special photo of us"><figcaption>ang ganda ng baby ko aaaa ♡</figcaption></figure></div>
+<div class="music"><div class="disc">♫</div><p><strong>“Mean It” — LANY</strong><br><small>A little song for my birthday baby 💗</small></p><button id="musicBtn" style="margin-left:auto;padding:9px 13px">▶</button></div>
+<p class="note" style="max-width:390px;margin:0 auto">Press play to hear the chorus of “Mean It” 💗</p>
+<footer>MADE WITH LOVE, JUST FOR YOU ♡</footer>
+</main>
+<audio id="audio" src="mean-it.mp3" preload="auto"></audio>
+<script>
+const stars=document.getElementById('stars');for(let i=0;i<120;i++){let s=document.createElement('i');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.opacity=.25+Math.random()*.75;s.style.animationDelay=Math.random()*3+'s';stars.appendChild(s)}
+const bouquet=document.getElementById('bouquet');
+function bloom(){
+  bouquet.querySelectorAll('.stem,.flower,.wrap').forEach(e=>e.remove());
+  const wrap=document.createElement('div');wrap.className='wrap';bouquet.appendChild(wrap);
+  // Flower heads form a rounded dome instead of a straight row.
+  const flowers=[
+    {x:50,y:254,a:0,d:.04},{x:40,y:250,a:-10,d:.10},{x:60,y:250,a:10,d:.16},
+    {x:30,y:235,a:-18,d:.22},{x:70,y:235,a:18,d:.28},{x:20,y:214,a:-25,d:.34},{x:80,y:214,a:25,d:.40},
+    {x:35,y:218,a:-12,d:.46},{x:65,y:218,a:12,d:.52},{x:45,y:232,a:-5,d:.58},{x:55,y:232,a:5,d:.64},
+    {x:27,y:193,a:-22,d:.70},{x:73,y:193,a:22,d:.76},{x:39,y:195,a:-12,d:.82},{x:61,y:195,a:12,d:.88},
+    {x:48,y:184,a:-4,d:.94},{x:52,y:184,a:4,d:1.00}
+  ];
+  flowers.forEach((f,i)=>{
+    const stemX=50+(f.x-50)*.48;
+    const st=document.createElement('i');st.className='stem';st.style.left=stemX+'%';
+    st.style.height=(f.y-57)+'px';st.style.transform=`rotate(${(f.x-50)*.15}deg)`;st.style.animationDelay=(i*.05)+'s';bouquet.appendChild(st);
+    const fl=document.createElement('div');fl.className='flower';fl.style.left=f.x+'%';fl.style.bottom=f.y+'px';
+    fl.style.transform=`translateX(-50%) rotate(${f.a}deg) scale(.05)`;fl.style.animationDelay=f.d+'s';
+    fl.innerHTML='<i class="petal"></i>'.repeat(7)+'<i class="rose-center"></i>'; bouquet.appendChild(fl);
+  });
+}
+bloom();
+document.getElementById('start').addEventListener('click', async () => {
+  document.getElementById('opening').classList.add('hide');
+  try {
+    // Wait for the MP3 metadata before seeking, otherwise Safari may reject playback.
+    if (audio.readyState === 0) {
+      await new Promise((resolve, reject) => {
+        const ok = () => { cleanup(); resolve(); };
+        const fail = () => { cleanup(); reject(new Error('Audio file could not load')); };
+        const cleanup = () => {
+          audio.removeEventListener('loadedmetadata', ok);
+          audio.removeEventListener('error', fail);
+        };
+        audio.addEventListener('loadedmetadata', ok, { once: true });
+        audio.addEventListener('error', fail, { once: true });
+        audio.load();
+      });
+    }
+    if (Number.isFinite(audio.duration) && audio.duration > chorusStart && audio.currentTime < chorusStart) {
+      audio.currentTime = chorusStart;
+    }
+    await audio.play();
+    musicBtn.textContent = 'Ⅱ';
+  } catch (e) {
+    musicBtn.textContent = '▶';
+    // Keep the player button available if Safari blocks or cannot load the MP3.
+  }
+});
+document.getElementById('opening').addEventListener('click',e=>{if(e.target.id!=='start')document.getElementById('opening').classList.add('hide')});
+const env=document.getElementById('envelope');function toggleEnv(){env.classList.toggle('open')}env.addEventListener('click',toggleEnv);env.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggleEnv()}});
+const audio=document.getElementById('audio'),musicBtn=document.getElementById('musicBtn');
+const chorusStart=49;
+audio.addEventListener('loadedmetadata',()=>{if(audio.currentTime<chorusStart)audio.currentTime=chorusStart;});
+audio.addEventListener('ended',()=>{audio.currentTime=chorusStart;audio.play().catch(()=>{});});
+musicBtn.addEventListener('click',async()=>{try{if(audio.paused){if(audio.currentTime===0)audio.currentTime=chorusStart;await audio.play();musicBtn.textContent='Ⅱ'}else{audio.pause();musicBtn.textContent='▶'}}catch(e){alert('Please check that mean-it.mp3 is in the same folder as index.html.')}});
+</script></body></html>
